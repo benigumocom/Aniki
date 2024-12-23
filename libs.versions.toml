@@ -1,0 +1,17 @@
+# Hilt で KSP の依存関係の設定 (build.gradle.kts)
+# https://android.benigumo.com/20231104/hilt-ksp/
+
+[versions]
+android-gradle-plugin = "8.1.2" 
+kotlin = "1.9.10"
+ksp = "1.9.10-1.0.13"
+hilt = "2.48.1"
+
+[plugins]
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+
+[libraries]
+hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+# hilt-android-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
